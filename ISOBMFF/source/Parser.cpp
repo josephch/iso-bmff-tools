@@ -64,6 +64,7 @@
 #include <ISOBMFF/SCHM.hpp>
 #include <ISOBMFF/HVC1.hpp>
 #include <ISOBMFF/AVC1.hpp>
+#include <ISOBMFF/STSC.hpp>
 #include <map>
 #include <stdexcept>
 #include <cstring>
@@ -379,5 +380,6 @@ namespace ISOBMFF
         this->RegisterBox( "schm", [ = ]() -> std::shared_ptr< Box > { return std::make_shared< SCHM >(); } );
         this->RegisterBox( "hvc1", [ = ]() -> std::shared_ptr< Box > { return std::make_shared< HVC1 >(); } );
         this->RegisterBox( "avc1", [ = ]() -> std::shared_ptr< Box > { return std::make_shared< AVC1 >(); } );
+        this->RegisterBox( "stsc", [ = ]() -> std::shared_ptr< Box > { return std::make_shared< STSC >(); } );
     }
 }

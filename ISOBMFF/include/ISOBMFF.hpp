@@ -79,6 +79,7 @@
 #include <ISOBMFF/SCHM.hpp>
 #include <ISOBMFF/HVC1.hpp>
 #include <ISOBMFF/AVC1.hpp>
+#include <ISOBMFF/STSC.hpp>
 
 #ifdef _WIN32
 #include <ISOBMFF/WIN32.hpp>
