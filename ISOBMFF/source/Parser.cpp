@@ -65,6 +65,8 @@
 #include <ISOBMFF/HVC1.hpp>
 #include <ISOBMFF/AVC1.hpp>
 #include <ISOBMFF/STSC.hpp>
+#include <ISOBMFF/STCO.hpp>
+#include <ISOBMFF/CO64.hpp>
 #include <map>
 #include <stdexcept>
 #include <cstring>
@@ -381,5 +383,7 @@ namespace ISOBMFF
         this->RegisterBox( "hvc1", [ = ]() -> std::shared_ptr< Box > { return std::make_shared< HVC1 >(); } );
         this->RegisterBox( "avc1", [ = ]() -> std::shared_ptr< Box > { return std::make_shared< AVC1 >(); } );
         this->RegisterBox( "stsc", [ = ]() -> std::shared_ptr< Box > { return std::make_shared< STSC >(); } );
+        this->RegisterBox( "stco", [ = ]() -> std::shared_ptr< Box > { return std::make_shared< STCO >(); } );
+        this->RegisterBox( "co64", [ = ]() -> std::shared_ptr< Box > { return std::make_shared< CO64 >(); } );
     }
 }

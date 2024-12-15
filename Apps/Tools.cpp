@@ -1,9 +1,11 @@
 #include <iostream>
 
+#include "ISOBMFF/CO64.hpp"
 #include "ISOBMFF/FTYP.hpp"
 #include "ISOBMFF/HDLR.hpp"
 #include "ISOBMFF/MVHD.hpp"
 #include "ISOBMFF/Parser.hpp"
+#include "ISOBMFF/STCO.hpp"
 #include "ISOBMFF/STSC.hpp"
 #include "ISOBMFF/TKHD.hpp"
 
@@ -39,7 +41,48 @@ static void processMinf(ISOBMFF::Container *minf)
                               << " sampleToChunk.samplesPerChunk : " << sampleToChunk.samplesPerChunk
                               << " sampleToChunk.sampleDescriptionId : " << sampleToChunk.sampleDescriptionId << "\n";
                 }
-                // TODO
+            }
+
+            static constexpr size_t maxChunkOffsetToPrint = 32;
+
+            std::shared_ptr<ISOBMFF::STCO> stco = stbl->GetTypedBox<ISOBMFF::STCO>("stco");
+            if (!stco)
+            {
+                std::cerr << "stco not accessible\n";
+            }
+            else
+            {
+                size_t entryCount = stco->GetEntryCount();
+                std::cout << "stco entry count  : " << entryCount << "\n";
+                if (entryCount > maxChunkOffsetToPrint)
+                {
+                    entryCount = maxChunkOffsetToPrint;
+                }
+                for (size_t i = 0; i < entryCount; i++)
+                {
+                    uint32_t chunkOffset = stco->GetChunkOffset(i);
+                    std::cout << "idx  : " << i << " chunkOffset : " << chunkOffset << "\n";
+                }
+            }
+
+            std::shared_ptr<ISOBMFF::CO64> co64 = stbl->GetTypedBox<ISOBMFF::CO64>("co64");
+            if (!co64)
+            {
+                std::cerr << "co64 not accessible\n";
+            }
+            else
+            {
+                size_t entryCount = co64->GetEntryCount();
+                std::cout << "co64 entry count  : " << entryCount << "\n";
+                if (entryCount > maxChunkOffsetToPrint)
+                {
+                    entryCount = maxChunkOffsetToPrint;
+                }
+                for (size_t i = 0; i < entryCount; i++)
+                {
+                    uint32_t chunkOffset = co64->GetChunkOffset(i);
+                    std::cout << "idx  : " << i << " chunkOffset : " << chunkOffset << "\n";
+                }
             }
         }
     }

@@ -30,6 +30,7 @@
 		<Unit filename="ISOBMFF/include/ISOBMFF/BinaryStream.hpp" />
 		<Unit filename="ISOBMFF/include/ISOBMFF/Box.hpp" />
 		<Unit filename="ISOBMFF/include/ISOBMFF/CDSC.hpp" />
+		<Unit filename="ISOBMFF/include/ISOBMFF/CO64.hpp" />
 		<Unit filename="ISOBMFF/include/ISOBMFF/COLR.hpp" />
 		<Unit filename="ISOBMFF/include/ISOBMFF/Casts.hpp" />
 		<Unit filename="ISOBMFF/include/ISOBMFF/Container.hpp" />
@@ -63,6 +64,7 @@
 		<Unit filename="ISOBMFF/include/ISOBMFF/PIXI.hpp" />
 		<Unit filename="ISOBMFF/include/ISOBMFF/Parser.hpp" />
 		<Unit filename="ISOBMFF/include/ISOBMFF/SCHM.hpp" />
+		<Unit filename="ISOBMFF/include/ISOBMFF/STCO.hpp" />
 		<Unit filename="ISOBMFF/include/ISOBMFF/STSC.hpp" />
 		<Unit filename="ISOBMFF/include/ISOBMFF/STSD.hpp" />
 		<Unit filename="ISOBMFF/include/ISOBMFF/STSS.hpp" />
@@ -82,6 +84,7 @@
 		<Unit filename="ISOBMFF/source/BinaryStream.cpp" />
 		<Unit filename="ISOBMFF/source/Box.cpp" />
 		<Unit filename="ISOBMFF/source/CDSC.cpp" />
+		<Unit filename="ISOBMFF/source/CO64.cpp" />
 		<Unit filename="ISOBMFF/source/COLR.cpp" />
 		<Unit filename="ISOBMFF/source/Container.cpp" />
 		<Unit filename="ISOBMFF/source/ContainerBox.cpp" />
@@ -120,6 +123,7 @@
 		<Unit filename="ISOBMFF/source/PIXI.cpp" />
 		<Unit filename="ISOBMFF/source/Parser.cpp" />
 		<Unit filename="ISOBMFF/source/SCHM.cpp" />
+		<Unit filename="ISOBMFF/source/STCO.cpp" />
 		<Unit filename="ISOBMFF/source/STSC.cpp" />
 		<Unit filename="ISOBMFF/source/STSD.cpp" />
 		<Unit filename="ISOBMFF/source/STSS.cpp" />
